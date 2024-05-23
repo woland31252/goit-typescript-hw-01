@@ -1,9 +1,9 @@
 import './style.css'
-import './basic/1.ts'
+
 // src/main.ts
 
 function add(num1: number, num2: number) {
-  return num1 + num2;
+   return num1 + num2;
 }
 
 console.log(add(1, 2));
@@ -100,6 +100,8 @@ usersPerson = [
   { name: 'Jon', age: 66 },
 ]
 
+console.log(usersPerson)
+
 type Persons = {
   name: string,
   age: number,
@@ -131,6 +133,7 @@ fixed = ["feg", 10]
 
 let fixArr: [...string[], number]
 fixArr = ['ss', '10', '22', 33]
+console.log(fixArr)
 
 enum Role {
   ADMIN,
@@ -141,3 +144,43 @@ const person = { role: Role.ADMIN }
 if (person.role === Role.ADMIN) {
   console.log(Role.ADMIN)
 }
+
+
+// generics
+
+let arr: Array<string | number> = [];
+arr=['ss', 10, 22, 'dd']
+console.log(arr)
+
+const promise: Promise<string> = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve('Isdown')
+  }, 1000);
+})
+
+promise.then((data) => {
+  console.log(data)
+})
+
+function identifity<T>(arg: T): T{
+  return arg;
+}
+
+const identf1 = identifity('Demo');
+const identf2 = identifity(123);
+
+console.log('res1:', identf1, 'res2:', identf2)
+
+
+function firstArrElem<T>(arg: T[]):T {
+  return arg[0];
+}
+
+let arrNumb = [11, 123, 45, 65];
+let arrSrtg = ['aa', 'ff', 'rr'];
+
+let fun1 = firstArrElem(arrNumb);
+let fun2 = firstArrElem(arrSrtg);
+
+console.log(fun1, fun2)
+
