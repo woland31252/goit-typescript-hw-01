@@ -1,13 +1,3 @@
-// interface Courses {
-//     title: string;
-//     likes: number;
-//     accounts: string[];
-//     status: string;
-//     details?: {
-//         createAt: string;
-//         updateAt: string;
-//     }
-// }
 
 
 type Courses = {
@@ -20,11 +10,6 @@ type Courses = {
         updateAt: Date;
     }
 }
-
-
-
-
-
 
 const page1: Courses = {
   title: 'The awesome page',
